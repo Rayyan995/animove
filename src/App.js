@@ -1,13 +1,17 @@
 import React from 'react';
 import './App.css';
 
-import Test from './components/Test';
+import Layout from './HOC/Layout/Layout';
+import Cards from './components/Cards/Cards';
 
 function App() {
   return (
     <div className="App">
-      <Test />
+      <Layout>
+        <Cards />
+      </Layout>
     </div>
+    // <ImgHoverOverlay imgSrc="https://m.media-amazon.com/images/M/MV5BMTczNTIyNTQ5Ml5BMl5BanBnXkFtZTgwOTI2ODk2NzM@._V1_.jpg"/>
   );
 }
 

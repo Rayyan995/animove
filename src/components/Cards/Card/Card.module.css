@@ -1,0 +1,11 @@
+.Card{
+    border: 3px solid #dddddd;
+    transition: .5s ease;
+}
+.Card:hover {
+    border-color: #6ac045;
+    border-width: 3px;
+}
+.Card img{
+    height: 300px;
+}
