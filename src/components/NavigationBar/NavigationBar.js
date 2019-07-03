@@ -13,7 +13,8 @@ import classes from "./NavigationBar.module.css";
 const NavigationBar = (props) => {
     return (
         <Navbar className={classes.Color} variant="dark" fixed="top" expand="lg">
-            <Navbar.Brand className='ml-3' href="#">{props.siteName}</Navbar.Brand>
+            <Navbar.Brand className='ml-3' href="#"><h2 className={classes.Brand} ><strong>{props.siteName}</strong></h2></Navbar.Brand>
+            <span>HD Animation</span><span>Movies</span>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">

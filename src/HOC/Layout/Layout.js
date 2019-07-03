@@ -8,8 +8,8 @@ class Layout extends Component {
     render() {
         return (
             <React.Fragment>
-                <NavigationBar siteName='ANIMO'/>
-                <div className={classes.Content + ' container'}>
+                <NavigationBar siteName='ANIMOV'/>
+                <div className={classes.Content + ' container px-4'}>
                     {this.props.children}
                 </div>
                 <Footer />

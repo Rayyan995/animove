@@ -1,5 +1,20 @@
 .Color {
     padding: 0;
-    background-color: #023026 !important;
-    box-shadow: 1px 1px 5px rgba(84, 238, 110, 0.534);
+    background-color: var(--lightDark) !important;
+    /* box-shadow: 1px 1px 5px #54ee6e88; */
+    border: 1px solid var(--mainGray)
+}
+.Brand{
+    color: var(--mainGreen);
+    text-shadow: #023026;
+}
+.Color span{
+    color: var(--darkWhite);
+    font-size: 18px;
+}
+.Color span:first-of-type {
+    margin-right: 5px;
+}
+.Color span:nth-of-type(2){
+    margin-right: 150px;
 }
