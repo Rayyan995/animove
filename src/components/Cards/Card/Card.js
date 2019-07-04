@@ -7,11 +7,11 @@ import ImgHoverOverlay from '../../UI/ImgHoverOverlay/ImgHoverOverlay';
 const Card = (props) => {
     return (
         <React.Fragment>
-            <div className='col-11 mx-auto col-md-4 col-lg-3 pb-5'>
-                <div className={classes.Card + " card"}>
+            <div className='col-sm-8 mx-auto col-md-4 col-lg-3 pb-5'>
+                <div className={classes.Card + " card mx-2"} onClick={props.clicked} >
                     <NavLink to='/1'>
                         <ImgHoverOverlay
-                            imgSrc='https://m.media-amazon.com/images/M/MV5BMTczNTIyNTQ5Ml5BMl5BanBnXkFtZTgwOTI2ODk2NzM@._V1_.jpg'
+                            imgSrc={props.imgSrc}
                             class="card-img-top"
                             firstHead='6.5 / 10'
                             secondHead='Drama / Action / Romance' />
@@ -23,10 +23,10 @@ const Card = (props) => {
                 </div>
             </div>
 
-            <div className='col-11 mx-auto col-md-4 col-lg-3 pb-5'>
-                <div className={classes.Card + " card"}>
+            <div className='col-sm-8 mx-auto col-md-4 col-lg-3 pb-5'>
+                <div className={classes.Card + " card mx-2"} onClick={props.clicked}>
 
-                    <ImgHoverOverlay imgSrc='https://image-ticketfly.imgix.net/00/02/73/66/11-og.JPG?w=1575&h=2048'
+                    <ImgHoverOverlay imgSrc='https://img.yts.lt/assets/images/movies/Hotel_Transylvania_2012/medium-cover.jpg'
                         class="card-img-top"
                         firstHead='6.5 / 10'
                         secondHead='Drama / Action / Romance' />

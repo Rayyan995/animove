@@ -8,7 +8,7 @@ const ImgHoverOverlay = (props) => {
             <div className={classes.Middle}>
                 <h3>{props.firstHead}</h3>
                 <h3>{props.secondHead}</h3>
-                <button className='btn btn-success'>View Details</button>
+                <button className='btn btn-success mt-5'>View Details</button>
             </div>
         </div>
     )

@@ -1,17 +1,19 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
 import Layout from './HOC/Layout/Layout';
 import Cards from './components/Cards/Cards';
+import AddMovie from './components/AddMovie/AddMovie';
 
 function App() {
   return (
-    <div className="App">
-      <Layout>
-        <Cards />
-      </Layout>
-    </div>
-    // <ImgHoverOverlay imgSrc="https://m.media-amazon.com/images/M/MV5BMTczNTIyNTQ5Ml5BMl5BanBnXkFtZTgwOTI2ODk2NzM@._V1_.jpg"/>
+    <Layout>
+      <Switch>
+        <Route path='/' exact component={Cards} />
+        <Route path='/add-movie' exact component={AddMovie} />
+      </Switch>
+    </Layout>
   );
 }
 
