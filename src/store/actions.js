@@ -1,0 +1,2 @@
+export const CLICK_TO_MORE_DETAILS = 'CLICK_TO_MORE_DETAILS';
+

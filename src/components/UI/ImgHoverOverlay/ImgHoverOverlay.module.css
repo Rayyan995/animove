@@ -28,7 +28,7 @@
     opacity: 1;
   }
   .Middle * {
-    margin-top: 30px;
+    margin-top: 20px;
     color: var(--mainWhite);
     font-weight: bold;
   }

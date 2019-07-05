@@ -1,18 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, HashRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import reducer from './store/reducer';
+
+const store = createStore(reducer);
 
 const app = (
-    <BrowserRouter>
-        <HashRouter>
-            <App />
-        </HashRouter>
-    </BrowserRouter>
+    <Provider store={store}>
+        <BrowserRouter>
+            <HashRouter>
+                <App />
+            </HashRouter>
+        </BrowserRouter>
+    </Provider>
 )
 
 ReactDOM.render(app, document.getElementById('root'));
