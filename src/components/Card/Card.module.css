@@ -1,0 +1,31 @@
+.Card{
+    border: 3px solid var(--darkWhite);
+    transition: .5s ease;
+    cursor: pointer;
+}
+.Card:hover {
+    border-color: var(--mainGreen);
+    border-width: 3px;
+}
+.Card img{
+    height: 300px;
+}
+.Card a {
+    text-decoration: none;
+    color: var(--mainDark)
+}
+.Card a:hover {
+    color: rgb(112, 106, 106);
+}
+.Card a h6:nth-of-type(2){
+    color: rgb(112, 106, 106);
+}
+.CardAsRewiew {
+    width: 100% !important;
+    margin: auto;
+}
+@media (min-width: 600px) {
+    .CardAsRewiew {
+        width: 70% !important;
+    }
+}

@@ -3,8 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
 import Layout from './HOC/Layout/Layout';
-import Cards from './components/Cards/Cards';
-import AddMovie from './components/AddMovie/AddMovie';
+import Cards from './containers/Cards/Cards';
+import AddMovie from './containers/AddMovie/AddMovie';
 
 function App() {
   return (

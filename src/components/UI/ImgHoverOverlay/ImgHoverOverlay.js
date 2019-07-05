@@ -4,10 +4,10 @@ import classes from './ImgHoverOverlay.module.css';
 const ImgHoverOverlay = (props) => {
     return (
         <div className={classes.Container}>
-            <img src={props.imgSrc} alt="Avatar" />
+            <img src={props.imgURL} alt="Avatar" />
             <div className={classes.Middle}>
-                <h3>{props.firstHead}</h3>
-                <h3>{props.secondHead}</h3>
+                <h3>{props.idmd}</h3>
+                <h3>{props.genre}</h3>
                 <button className='btn btn-success mt-5'>View Details</button>
             </div>
         </div>
