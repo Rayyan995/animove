@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom'
 
 import axios from '../../axios-add-movies';
 import classes from './AddMovie.module.css'
@@ -77,9 +76,8 @@ export default class AddMovie extends Component {
         this.setState({ movieInfo: movieInfo, showModal: true });
     }
     addMovieConfirmHandler = () => {
-        console.log('this.state.showModal: ', this.state.showModal);
-        this.setState({ showModal: false });
-        console.log('this.state.showModal: ', this.state.showModal);
+        this.modalClosed();
+        window.location.reload();
 
         axios.post('/movies.json', this.state.movieInfo)
             .then(req => {
@@ -138,7 +136,11 @@ export default class AddMovie extends Component {
                             className='btn btn-outline-success col-8 col-md-4 col-lg-4'
                             onClick={this.addMovieConfirmHandler} >
                             Confirm Upload</button>
-                        <NavLink className='btn btn-link col-7 col-md-4 col-lg-4' style={{ color: '#031d17', fontWeight: 'bold' }} to='/'>Go to Site</NavLink>
+                        <button
+                            className='btn btn-outline-link col-7 col-md-4 col-lg-4'
+                            style={{ color: '#031d17', fontWeight: '600', textDecoration: 'underLine' }}
+                            onClick={this.modalClosed} >
+                            Return to Edit</button>
                     </div>
                 </Modal>
 

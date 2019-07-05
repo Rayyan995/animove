@@ -8,7 +8,7 @@
     border-width: 3px;
 }
 .Card img{
-    height: 230px;
+    height: 310px;
 }
 .Card a {
     text-decoration: none;
@@ -24,8 +24,16 @@
     width: 100% !important;
     margin: auto;
 }
+.CardAsRewiew img {
+    height: 220px;
+}
 @media (min-width: 600px) {
+
     .CardAsRewiew {
-        width: 70% !important;
+        width: 50% !important;
     }
+    .Card img{
+        height: 290px;
+    }
+
 }
