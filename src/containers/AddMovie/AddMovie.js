@@ -77,11 +77,10 @@ export default class AddMovie extends Component {
     }
     addMovieConfirmHandler = () => {
         this.modalClosed();
-        window.location.reload();
 
         axios.post('/movies.json', this.state.movieInfo)
             .then(req => {
-                console.log('req: ', req);
+                window.location.reload();
             });
     }
     modalClosed = () => {
