@@ -74,9 +74,13 @@ export default class AddMovie extends Component {
             movieInfo[key] = value;
         }
         movieInfo['movieID'] = new Date();
-        this.setState({ movieInfo: movieInfo, showModal: true })
+        this.setState({ movieInfo: movieInfo, showModal: true });
     }
     addMovieConfirmHandler = () => {
+        console.log('this.state.showModal: ', this.state.showModal);
+        this.setState({ showModal: false });
+        console.log('this.state.showModal: ', this.state.showModal);
+
         axios.post('/movies.json', this.state.movieInfo)
             .then(req => {
                 console.log('req: ', req);
@@ -112,7 +116,7 @@ export default class AddMovie extends Component {
                         }
                         <button
                             onClick={this.askConfirmAddMovieHandler}
-                            className="btn btn-success"
+                            className="btn btn-outline-success"
                             disabled={this.state.btnDisabled}
                         >Add The Movie</button>
                     </form>
@@ -120,6 +124,7 @@ export default class AddMovie extends Component {
                 <Modal
                     show={this.state.showModal}
                     modalClosed={this.modalClosed} >
+                    <p className='font-italic'>If something wrong in review, please check data you entered</p>
                     <Card
                         review={true}
                         key={this.state.movieInfo.name}
@@ -128,9 +133,12 @@ export default class AddMovie extends Component {
                         year={this.state.movieInfo.year}
                         genre={this.state.movieInfo.genre}
                         idmb={this.state.movieInfo.idmb} />
-                    <div className='row justify-content-around pt-5 pb-3'>
-                        <button className='btn btn-success'>Confirm Upload</button>
-                        <NavLink className='btn btn-link' style={{color: '#f3f3f3', fontWeight: 'bold'}} to='/'>Go to Site</NavLink>
+                    <div className='row justify-content-around pt-4 pb-1'>
+                        <button
+                            className='btn btn-outline-success'
+                            onClick={this.addMovieConfirmHandler} >
+                            Confirm Upload</button>
+                        <NavLink className='btn btn-link' style={{ color: '#031d17', fontWeight: 'bold' }} to='/'>Go to Site</NavLink>
                     </div>
                 </Modal>
 

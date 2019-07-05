@@ -5,7 +5,7 @@ import classes from './Card.module.css';
 import ImgHoverOverlay from '../UI/ImgHoverOverlay/ImgHoverOverlay';
 
 const Card = (props) => {
-    let pathTO = '/'
+    let pathTO = props.name.replace(/\s+/g, '-').toLowerCase();
     if(props.review)
        pathTO = 'add-movie';
        

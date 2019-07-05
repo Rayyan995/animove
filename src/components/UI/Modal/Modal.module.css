@@ -1,8 +1,8 @@
 .Modal {
     position: fixed;
     z-index: 500;
-    background-color: rgba(159, 172, 172, 0.952);
-    color: #5a3806;
+    background-color: rgba(205, 216, 216, 0.952);
+    color: var(--darkGreen);
     width: 70%;
     box-shadow: 1px 1px 12px rgb(0, 0, 0);
     border-radius: 15px;
