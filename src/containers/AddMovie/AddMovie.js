@@ -133,7 +133,7 @@ export default class AddMovie extends Component {
                         year={this.state.movieInfo.year}
                         genre={this.state.movieInfo.genre}
                         idmb={this.state.movieInfo.idmb} />
-                    <div className='row justify-content-around pt-3 pb-1'>
+                    <div className='row justify-content-around pt-3'>
                         <button
                             className='btn btn-outline-success col-8 col-md-4 col-lg-4'
                             onClick={this.addMovieConfirmHandler} >

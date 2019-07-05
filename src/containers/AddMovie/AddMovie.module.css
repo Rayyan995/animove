@@ -8,6 +8,7 @@
 }
 .Form p {
     color: var(--mainWhite);
+    font-size: 22px;
 }
 .Form input {
     color: var(--mainDark) !important;
