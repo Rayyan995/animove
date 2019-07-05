@@ -135,10 +135,10 @@ export default class AddMovie extends Component {
                         idmb={this.state.movieInfo.idmb} />
                     <div className='row justify-content-around pt-3 pb-1'>
                         <button
-                            className='btn btn-outline-success'
+                            className='btn btn-outline-success col-8 col-md-4 col-lg-4'
                             onClick={this.addMovieConfirmHandler} >
                             Confirm Upload</button>
-                        <NavLink className='btn btn-link' style={{ color: '#031d17', fontWeight: 'bold' }} to='/'>Go to Site</NavLink>
+                        <NavLink className='btn btn-link col-7 col-md-4 col-lg-4' style={{ color: '#031d17', fontWeight: 'bold' }} to='/'>Go to Site</NavLink>
                     </div>
                 </Modal>
 
