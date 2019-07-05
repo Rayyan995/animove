@@ -6,9 +6,9 @@
     width: 70%;
     box-shadow: 1px 1px 12px rgb(0, 0, 0);
     border-radius: 15px;
-    padding: 16px;
+    padding: 5px 16px;
     left: 15%;
-    top: 20%;
+    top: 12%;
     box-sizing: border-box;
     transition: all 0.5s ease-out;
 }
@@ -16,6 +16,7 @@
 @media (min-width: 600px) {
     .Modal {
         width: 500px;
+        top: 20%;
         left: calc(50% - 250px);
     }
 }

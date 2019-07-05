@@ -36,7 +36,6 @@ const Card = (props) => {
             </div>
         </React.Fragment>
     )
-
 }
 
 export default Card
