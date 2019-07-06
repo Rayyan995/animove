@@ -1,0 +1,5 @@
+.ViewDetails {
+    background-color: var(--lightDark) !important;
+    border: 1px solid var(--mainGray);
+    border-radius: 10px;
+}
