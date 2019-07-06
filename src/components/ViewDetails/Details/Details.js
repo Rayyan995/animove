@@ -10,7 +10,7 @@ const Details = () => {
             <div className={classes.Details + ' row'}>
                 <div className={classes.Name + ' col-10 col-md-5 mx-auto col-lg-3 mb-4'}>
                     <FontAwesomeIcon icon={faCoffee} />
-                    <h4>Film Name</h4>
+                    <h4>THE DARK KNIGHT RISES</h4>
                     <h6>2019</h6>
                     <h6>Action / Animation / Sci-Fi</h6>
                     <h6>IDMB 6.9</h6>
@@ -24,7 +24,7 @@ const Details = () => {
                         alt='Brand' />
                     <button
                         className='col-8 col-md-8 btn btn-outline-success mx-auto btn-block mt-3'
-                    >Download Now</button>
+                    ><strong>Download Now</strong></button>
                 </div>
                 <div className={classes.NameLgScreen + ' col-10 col-md-5 mx-auto col-lg-6'}>
                     <h1>Film Name</h1>

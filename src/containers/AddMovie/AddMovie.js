@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import axios from '../../axios-add-movies';
 import classes from './AddMovie.module.css'
 import Modal from '../../components/UI/Modal/Modal';
+import AlertMessage from '../../components/UI/AlertMessage/AlertMessage';
 import Card from '../../components/Card/Card';
 
 const INITIAL_STATE = {
@@ -54,7 +55,9 @@ export default class AddMovie extends Component {
             year: "2019",
         },
         btnDisabled: false,
-        showModal: false
+        showModal: false,
+        showAlertMsg: false,
+        isAddSuccessful: true
     }
 
     inputChangedHandler = (e, inputID) => {
@@ -77,14 +80,21 @@ export default class AddMovie extends Component {
     }
     addMovieConfirmHandler = () => {
         this.modalClosed();
-
         axios.post('/movies.json', this.state.movieInfo)
             .then(req => {
-                window.location.reload();
+                // window.location.reload();
+                this.setState({ showAlertMsg: true });
+            })
+            .catch(err => {
+                this.setState({ isAddSuccessful: false, showAlertMsg: true });
             });
     }
     modalClosed = () => {
         this.setState({ showModal: false });
+    }
+    AlertMsgClosed = () => {
+        this.setState({ showAlertMsg: false });
+        window.location.reload();
     }
     render() {
         const formElementsArray = [];
@@ -115,7 +125,7 @@ export default class AddMovie extends Component {
                             onClick={this.askConfirmAddMovieHandler}
                             className="btn btn-outline-success"
                             disabled={this.state.btnDisabled}
-                        >Add The Movie</button>
+                        ><strong>Add The Movie</strong></button>
                     </form>
                 </div>
                 <Modal
@@ -134,7 +144,7 @@ export default class AddMovie extends Component {
                         <button
                             className='btn btn-outline-success col-8 col-md-4 col-lg-4'
                             onClick={this.addMovieConfirmHandler} >
-                            Confirm Upload</button>
+                            <strong>Confirm Upload</strong></button>
                         <button
                             className='btn btn-outline-link col-7 col-md-4 col-lg-4'
                             style={{ color: '#031d17', fontWeight: '600', textDecoration: 'underLine' }}
@@ -142,6 +152,10 @@ export default class AddMovie extends Component {
                             Return to Edit</button>
                     </div>
                 </Modal>
+                <AlertMessage
+                    show={this.state.showAlertMsg}
+                    close={this.AlertMsgClosed}
+                    isSuccessful={this.state.isAddSuccessful} />
 
             </React.Fragment>
 
