@@ -1,15 +1,22 @@
-// import * as actionTypes from "./actions";
+import * as actionTypes from "./actions";
 // import axios from '../axios-add-movies';
 
 const initialSate = {
-  allMovies: null
+  clickedMovie: ''
 
 };
 
 const reducer = (state = initialSate, action) => {
-  return {
-    ...state
+  switch (action.type) {
+    case actionTypes.CLICK_ON_MORE_DETAILS:
+      return {
+        ...state.clickedMovie,
+        clickedMovie: action.clickedMovie
+      };
+    default:
+      return state;
   }
+
 }
 
 export default reducer;

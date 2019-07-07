@@ -6,9 +6,9 @@ import ImgHoverOverlay from '../UI/ImgHoverOverlay/ImgHoverOverlay';
 
 const Card = (props) => {
     let pathTO = props.name.replace(/\s+/g, '-').toLowerCase();
-    if(props.review)
-       pathTO = 'add-movie';
-       
+    if (props.review)
+        pathTO = 'add-movie';
+
     let movieName;
     if (props.name.length > 24)
         movieName = props.name.substring(0, 18);
@@ -26,7 +26,6 @@ const Card = (props) => {
                             genre={props.genre}
                             idmb={props.idmb}
                         />
-
                         <div className="p-1 card-body" >
                             <h6 className="card- p-0" > < strong > {movieName + '...'} </strong></h6 >
                             <h6 className="card-title p-0" > {props.year} </h6>

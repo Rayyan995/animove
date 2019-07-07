@@ -3,16 +3,14 @@ import { connect } from 'react-redux';
 
 import Card from '../../components/Card/Card';
 import axios from '../../axios-add-movies';
-import classes from './Cards.module.css'
+import classes from './Cards.module.css';
+import * as actionTypes from '../../store/actions';
 
 class Cards extends Component {
     state = {
         allMovies: []
     }
-    componentDidMount= () => {
-
-        console.log('[redux], allMovies: ', this.props.allMovies);
-
+    componentDidMount = () => {
         axios.get('/movies.json')
             .then(res => {
                 const allMovies = []
@@ -22,18 +20,25 @@ class Cards extends Component {
                 this.setState({ allMovies: allMovies })
             })
     }
+    // specificLinkRenderHandler = (movieName) => {
+    //     console.log('clicked function!!!!!!!!!!!!!!!!!');
+    //     return <NavLink to={'/' + movieName}></NavLink>
+    // }
+
     render() {
         return (
             <div className={classes.BackColor + ' row pt-5'}>
                 {
                     this.state.allMovies.map(movie => (
-                        <Card
-                            key={movie.movieID}
-                            name={movie.name}
-                            imgURL={movie.imgURL}
-                            year={movie.year}
-                            genre={movie.genre}
-                            idmb={movie.idmb} />
+                            <Card
+                                key={movie.movieID}
+                                name={movie.name}
+                                imgURL={movie.imgURL}
+                                year={movie.year}
+                                genre={movie.genre}
+                                idmb={movie.idmb}
+                                clicked={() => this.props.viewDetailsHandler(movie)}
+                                />
                     ))};
             </div>
         )
@@ -42,8 +47,14 @@ class Cards extends Component {
 
 const mapStateToProps = state => {
     return {
-        allMovies: state.allMovies,
+        clickedMovie: state.clickedMovie,
     };
 };
 
-export default connect(mapStateToProps)(Cards)
+const mapDispatchToProps = dispatch => {
+    return {
+        viewDetailsHandler: movie =>
+            dispatch({ type: actionTypes.CLICK_ON_MORE_DETAILS, clickedMovie: movie }),
+    };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Cards);

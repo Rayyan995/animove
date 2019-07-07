@@ -96,6 +96,9 @@ export default class AddMovie extends Component {
         this.setState({ showAlertMsg: false });
         window.location.reload();
     }
+    dummyFun = () => {
+        console.log('clicked function!!!!!!!!!!!!!!!!!');
+    }
     render() {
         const formElementsArray = [];
         for (let key in this.state.addMovieForm) {
@@ -139,26 +142,27 @@ export default class AddMovie extends Component {
                         imgURL={this.state.movieInfo.imgURL}
                         year={this.state.movieInfo.year}
                         genre={this.state.movieInfo.genre}
-                        idmb={this.state.movieInfo.idmb} />
-                    <div className='row justify-content-around pt-3'>
-                        <button
-                            className='btn btn-outline-success col-8 col-md-4 col-lg-4'
-                            onClick={this.addMovieConfirmHandler} >
-                            <strong>Confirm Upload</strong></button>
-                        <button
-                            className='btn btn-outline-link col-7 col-md-4 col-lg-4'
-                            style={{ color: '#031d17', fontWeight: '600', textDecoration: 'underLine' }}
-                            onClick={this.modalClosed} >
-                            Return to Edit</button>
-                    </div>
+                        idmb={this.state.movieInfo.idmb}
+                        clicked={this.dummyFun} />
+                            <div className='row justify-content-around pt-3'>
+                                <button
+                                    className='btn btn-outline-success col-8 col-md-4 col-lg-4'
+                                    onClick={this.addMovieConfirmHandler} >
+                                    <strong>Confirm Upload</strong></button>
+                                <button
+                                    className='btn btn-outline-link col-7 col-md-4 col-lg-4'
+                                    style={{ color: '#031d17', fontWeight: '600', textDecoration: 'underLine' }}
+                                    onClick={this.modalClosed} >
+                                    Return to Edit</button>
+                            </div>
                 </Modal>
                 <AlertMessage
-                    show={this.state.showAlertMsg}
-                    close={this.AlertMsgClosed}
-                    isSuccessful={this.state.isAddSuccessful} />
+                        show={this.state.showAlertMsg}
+                        close={this.AlertMsgClosed}
+                        isSuccessful={this.state.isAddSuccessful} />
 
             </React.Fragment>
 
-        )
-    }
-}
+                )
+            }
+        }
