@@ -15,8 +15,8 @@ const Details = (props) => {
                     <h6>{props.clickedMovie.genre}i</h6>
                     <h6>IDMB {props.clickedMovie.idmb}</h6>
                     <i>Available in:</i>
-                    <a href='https://www.facebook.com' className='mb-1' target="_blank" rel="noopener noreferrer"> 720p.BlueRay</a>
-                    <a href='https://www.facebook.com' className='mb-1' target="_blank" rel="noopener noreferrer"> 1080p.BlueRay</a>
+                    <a href={props.clickedMovie.torrentLink_720} className='mb-1' target="_blank" rel="noopener noreferrer"> 720p.BlueRay</a>
+                    <a href={props.clickedMovie.torrentLink_1080} className='mb-1' target="_blank" rel="noopener noreferrer"> 1080p.BlueRay</a>
                 </div>
                 <div className={classes.Img_Download + ' col-10 col-md-5 mx-auto col-lg-3 mb-4'}>
                     <img
@@ -32,8 +32,8 @@ const Details = (props) => {
                     <h3>{props.clickedMovie.genre}i</h3>
                     <h3>IDMB {props.clickedMovie.idmb}</h3>
                     <i>Available in:</i>
-                    <a href='https://www.facebook.com' target="_blank" rel="noopener noreferrer"> 720p.BlueRay</a>
-                    <a href='https://www.facebook.com' target="_blank" rel="noopener noreferrer"> 1080p.BlueRay</a>
+                    <a href={props.clickedMovie.torrentLink_720} target="_blank" rel="noopener noreferrer"> 720p.BlueRay</a>
+                    <a href={props.clickedMovie.torrentLink_1080} target="_blank" rel="noopener noreferrer"> 1080p.BlueRay</a>
 
                 </div>
             </div>

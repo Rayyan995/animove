@@ -20,11 +20,6 @@ class Cards extends Component {
                 this.setState({ allMovies: allMovies })
             })
     }
-    // specificLinkRenderHandler = (movieName) => {
-    //     console.log('clicked function!!!!!!!!!!!!!!!!!');
-    //     return <NavLink to={'/' + movieName}></NavLink>
-    // }
-
     render() {
         return (
             <div className={classes.BackColor + ' row pt-5'}>
