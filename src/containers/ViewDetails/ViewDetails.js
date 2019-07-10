@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Details from '../../components/Details/Details';
 import classes from './ViewDetails.module.css';
-// import Trailer from './Trailer/Trailer';
+import Trailer from '../../components/Trailer/Trailer';
 
 class ViewDetails extends Component {
     state = {
@@ -24,7 +24,7 @@ class ViewDetails extends Component {
                     show={this.state.showModal}
                     modalShowed={this.modalShowedHandler}
                     modalClosed={this.modalClosedHandler} />
-                {/* <Trailer /> */}
+                <Trailer />
             </div>
         )
     }

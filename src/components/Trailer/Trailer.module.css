@@ -1,3 +1,8 @@
 .Trailer {
-    background-color: green;
+}
+.Trailer iframe {
+    border: 1px solid var(--mainGray);
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
 }

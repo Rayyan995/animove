@@ -19,33 +19,34 @@ class Cards extends Component {
                 }
                 this.setState({ allMovies: allMovies })
             })
+            .catch(err => {
+                console.log(err);
+            })
     }
     render() {
         return (
             <div className={classes.BackColor + ' row pt-5'}>
                 {
                     this.state.allMovies.map(movie => (
-                            <Card
-                                key={movie.movieID}
-                                name={movie.name}
-                                imgURL={movie.imgURL}
-                                year={movie.year}
-                                genre={movie.genre}
-                                idmb={movie.idmb}
-                                clicked={() => this.props.viewDetailsHandler(movie)}
-                                />
+                        <Card
+                            key={movie.movieID}
+                            name={movie.name}
+                            imgURL={movie.imgURL}
+                            year={movie.year}
+                            genre={movie.genre}
+                            idmb={movie.idmb}
+                            clicked={() => this.props.viewDetailsHandler(movie)}
+                        />
                     ))};
             </div>
         )
     }
 }
-
 const mapStateToProps = state => {
     return {
         clickedMovie: state.clickedMovie,
     };
 };
-
 const mapDispatchToProps = dispatch => {
     return {
         viewDetailsHandler: movie =>
