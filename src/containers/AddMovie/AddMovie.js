@@ -8,39 +8,40 @@ import Card from '../../components/Card/Card';
 
 const INITIAL_STATE = {
     name: {
-        id: 'name',
-        val: '',
+        val: 'No name entered ',
         placeholder: 'Enter Movie Name *'
     },
     imgURL: {
-        id: 'imgURL',
-        val: '',
+        val: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS_TisqJghibEJI4nIpWr_ydsIk_vl-tOqGv31041tJPynF_5W',
         placeholder: 'Enter Image URL *'
     },
     year: {
-        id: 'year',
-        val: '',
+        val: 'no year entered',
         placeholder: 'Enter Movie Year *'
     },
     genre: {
-        id: 'genre',
-        val: '',
+        val: 'no genre entered',
         placeholder: 'Enter Movie Genre *'
     },
     idmb: {
-        id: 'idmb',
-        val: '',
+        val: 'no IDMB entered',
         placeholder: 'Enter Movie IDMB *'
     },
     torrentLink_720: {
-        id: 'torrentLink',
         val: '',
-        placeholder: 'Enter Torrent Link [720] *'
+        placeholder: 'Enter Torrent Link [720] / [1080] *'
     },
     torrentLink_1080: {
-        id: 'torrentLink',
         val: '',
         placeholder: 'Enter Torrent Link [1080]'
+    },
+    trailerLink: {
+        val: '',
+        placeholder: 'Enter Trailer Link'
+    },
+    adminName: {
+        val: '',
+        placeholder: 'Enter you Name * '
     },
 }
 export default class AddMovie extends Component {
@@ -114,7 +115,7 @@ export default class AddMovie extends Component {
                     <form className={classes.Form + ' col-12 col-md-10 col-lg-8'}>
                         <p>Fields with <strong style={{ color: 'red' }}>*</strong> is required</p>
                         {
-                            formElementsArray.map((elem, index) =>
+                            formElementsArray.map((elem) =>
                                 <div className="form-group" key={elem.id}>
                                     <input
                                         onChange={(e) => this.inputChangedHandler(e, elem.id)}

@@ -18,17 +18,9 @@
     font-size: 18px;
 }
 .Details .NameLgScreen a, .Name a {
-    margin-left: 10px;
-    padding: 6px;
-    background-color: var(--mainDark);
-    border: 1px solid var(--mainGray);
-    color: var(--mainWhite);
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
+    
 }
 .Details .NameLgScreen a:hover {
-    background-color: var(--lightDark);
 }
 
 
