@@ -1,4 +1,6 @@
 .Trailer {
+    width: 100%;
+    display: block;
 }
 .Trailer iframe {
     border: 1px solid var(--mainGray);

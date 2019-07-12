@@ -2,9 +2,12 @@ import React from 'react';
 
 import Modal from '../UI/Modal/Modal';
 import AvailableIn from './AvailableIn/AvailableIn';
+import Trailer from '../Trailer/Trailer';
 import classes from './Details.module.css'
 
 const Details = (props) => {
+    console.log('clickedMovie: ', props.clickedMovie);
+
     return (
         <React.Fragment>
             <div className={classes.Details + ' row'}>
@@ -16,6 +19,7 @@ const Details = (props) => {
                     <AvailableIn
                         link_720={props.clickedMovie.torrentLink_720}
                         link_1080={props.clickedMovie.torrentLink_1080} />
+                    <h6><i>Uploaded at {props.clickedMovie.movieID}</i></h6>
                 </div>
                 <div className={classes.Img_Download + ' col-10 col-md-5 mx-auto col-lg-3 mb-4'}>
                     <img
@@ -29,13 +33,17 @@ const Details = (props) => {
                 <div className={classes.NameLgScreen + ' col-10 col-md-5 mx-auto col-lg-6'}>
                     <h3>{props.clickedMovie.name}</h3>
                     <h5>{props.clickedMovie.year}</h5>
-                    <h5>{props.clickedMovie.genre}i</h5>
+                    <h5>{props.clickedMovie.genre}</h5>
                     <h5>IDMB {props.clickedMovie.idmb}</h5>
                     <AvailableIn
                         link_720={props.clickedMovie.torrentLink_720}
                         link_1080={props.clickedMovie.torrentLink_1080} />
+                    <i className='text-secondary' >Uploaded at: {props.clickedMovie.movieID}</i>
                 </div>
+                <Trailer
+                    trailerLink={props.clickedMovie.trailerLink} />
             </div>
+
             <Modal
                 modalClosed={props.modalClosed}
                 show={props.show} >
@@ -44,6 +52,8 @@ const Details = (props) => {
                     link_720={props.clickedMovie.torrentLink_720}
                     link_1080={props.clickedMovie.torrentLink_1080} />
             </Modal>
+            <div className='row'>
+            </div>
         </React.Fragment>
     )
 }

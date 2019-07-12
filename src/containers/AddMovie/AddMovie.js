@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
 import axios from '../../axios-add-movies';
-import classes from './AddMovie.module.css'
 import Modal from '../../components/UI/Modal/Modal';
 import AlertMessage from '../../components/UI/AlertMessage/AlertMessage';
 import Card from '../../components/Card/Card';
+
+import { getDateAndTime } from '../../myOwnLib/myOwnLib';
+import classes from './AddMovie.module.css'
 
 const INITIAL_STATE = {
     name: {
@@ -39,13 +41,12 @@ const INITIAL_STATE = {
         val: '',
         placeholder: 'Enter Trailer Link'
     },
-    adminName: {
+    insertionUserName: {
         val: '',
         placeholder: 'Enter you Name * '
     },
 }
 export default class AddMovie extends Component {
-
     state = {
         addMovieForm: INITIAL_STATE,
         movieInfo: {
@@ -73,17 +74,18 @@ export default class AddMovie extends Component {
     askConfirmAddMovieHandler = () => {
         const movieInfo = {};
         for (let key in this.state.addMovieForm) {
-            const value = this.state.addMovieForm[key].val
-            movieInfo[key] = value;
+            movieInfo[key] = this.state.addMovieForm[key].val
         }
-        movieInfo['movieID'] = new Date();
+        const dateAndTime = getDateAndTime();
+        console.log('dateAndTime: ', dateAndTime);
+        
+        movieInfo['movieID'] = dateAndTime;
         this.setState({ movieInfo: movieInfo, showModal: true });
     }
     addMovieConfirmHandler = () => {
         this.modalClosed();
         axios.post('/movies.json', this.state.movieInfo)
             .then(req => {
-                // window.location.reload();
                 this.setState({ showAlertMsg: true });
             })
             .catch(err => {
@@ -141,25 +143,25 @@ export default class AddMovie extends Component {
                         year={this.state.movieInfo.year}
                         genre={this.state.movieInfo.genre}
                         idmb={this.state.movieInfo.idmb} />
-                            <div className='row justify-content-around pt-3'>
-                                <button
-                                    className='btn btn-outline-success col-8 col-md-4 col-lg-4'
-                                    onClick={this.addMovieConfirmHandler} >
-                                    <strong>Confirm Upload</strong></button>
-                                <button
-                                    className='btn btn-outline-link col-7 col-md-4 col-lg-4'
-                                    style={{ color: '#031d17', fontWeight: '600', textDecoration: 'underLine' }}
-                                    onClick={this.modalClosed} >
-                                    Return to Edit</button>
-                            </div>
+                    <div className='row justify-content-around pt-3'>
+                        <button
+                            className='btn btn-outline-success col-8 col-md-4 col-lg-4'
+                            onClick={this.addMovieConfirmHandler} >
+                            <strong>Confirm Upload</strong></button>
+                        <button
+                            className='btn btn-outline-link col-7 col-md-4 col-lg-4'
+                            style={{ color: '#031d17', fontWeight: '600', textDecoration: 'underLine' }}
+                            onClick={this.modalClosed} >
+                            Return to Edit</button>
+                    </div>
                 </Modal>
                 <AlertMessage
-                        show={this.state.showAlertMsg}
-                        close={this.AlertMsgClosed}
-                        isSuccessful={this.state.isAddSuccessful} />
+                    show={this.state.showAlertMsg}
+                    close={this.AlertMsgClosed}
+                    isSuccessful={this.state.isAddSuccessful} />
 
             </React.Fragment>
 
-                )
-            }
-        }
+        )
+    }
+}

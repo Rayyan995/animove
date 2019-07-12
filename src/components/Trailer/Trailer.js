@@ -1,12 +1,16 @@
 import React from 'react'
 import classes from './Trailer.module.css';
 
-const Trailer = () => {
+const Trailer = (props) => {
     return (
         <div className={classes.Trailer} >
             <h1 className='text-center text-secondary'>Trailer</h1>
-            <iframe width="800" height="450"
-                src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+            <iframe
+                className='col-12 col-md-10'
+                height='460'
+                title='trailer'
+                src={props.trailerLink} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen >
             </iframe>
         </div>
     )
