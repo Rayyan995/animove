@@ -1,11 +1,10 @@
 import React from 'react';
 
-import classes from './Spinner.css';
+import classes from './Spinner.module.css';
 
 const spinner = () => (
     <div className={classes.Spinner}>
-        <div className={classes.Double1}></div>
-        <div className={classes.Double2}></div>
+        <div className={classes.Loader}></div>
     </div>
 );
 

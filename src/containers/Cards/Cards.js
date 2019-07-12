@@ -3,12 +3,15 @@ import { connect } from 'react-redux';
 
 import Card from '../../components/Card/Card';
 import axios from '../../axios-add-movies';
+import Spinner from '../../components/UI/Spinner/Spinner';
+
 import classes from './Cards.module.css';
 import * as actionTypes from '../../store/actions';
 
 class Cards extends Component {
     state = {
-        allMovies: []
+        allMovies: [],
+        isSpinner: true
     }
     componentDidMount = () => {
         axios.get('/movies.json')
@@ -17,13 +20,15 @@ class Cards extends Component {
                 for (const key in res.data) {
                     allMovies.push(res.data[key]);
                 }
-                this.setState({ allMovies: allMovies })
+                this.setState({ allMovies: allMovies, isSpinner: false })
             })
             .catch(err => {
                 console.log(err);
             })
     }
     render() {
+        if (this.state.isSpinner)
+            return <Spinner />
         return (
             <div className={classes.BackColor + ' row pt-5'}>
                 {
