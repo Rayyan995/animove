@@ -1,68 +1,96 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ANIMOV
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+* [Name](#ANIMOV)
+* [Description](#Description)
+* [Requirements](#Requirements)
+* [Run The App](#Run_The_App)
+* [Challenges](#Challenges)
+* [Release](#Release)
+* [Contributing](#Contributing)
 
-### `npm start`
+## ANIMOV
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ANIMOV is a React web app for animation movies
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Description
 
-### `npm test`
+**ANIMOV** is an React web application that provides HD animation movies that users can download very easy. Also it provides the website admin with an awesome [page](https://animove.netlify.com/#/add-movie) to add new movies to his website.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Requirements
 
-### `npm run build`
+To run this app on your local machine there are some dependencies you have to install first. These **dependencies** are:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [ ` node ` ](https://nodejs.org/en/)  
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+    You should download it and install on your machine.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* [ ` redux ` ](https://www.npmjs.com/package/redux)  
 
-### `npm run eject`
+    A great standalone tool to manage **state change** and decreases **components coupling** .
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* [ ` react-redux ` ](https://www.npmjs.com/package/react-redux)  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Since ` redux ` 
+    is a standalone tool that is not dedicated to **React JS**, we need another package to hook it within a **React JS** app and here ` react-redux ` 
+    comes to the scene.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* [ ` bootstrap ` ](https://getbootstrap.com/)  
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    **Bootstrap** is the most popular **CSS Framework** for developing responsive and mobile-first websites.
 
-## Learn More
+    **Bootstrap** 4 is the newest version of Bootstrap
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* [ ` firebase ` ](https://firebase.google.com/)  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Firebase helps mobile and web app teams succeed
 
-### Code Splitting
+* [ ` react-bootstrap ` ](https://react-bootstrap.github.io/)  
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+    **React bootstrap** replaces the Bootstrap javascript. Each component has been built from scratch as a true **React** component, without unneeded dependencies like jQuery.
 
-### Analyzing the Bundle Size
+* [ ` react-router-dom ` ](https://www.npmjs.com/package/react-router-dom)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+    React Router is the most popular routing library for React. It allows you define routes in the same declarative style:
 
-### Making a Progressive Web App
+``` js
+    < Route path = "/home" component = {Home} />
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Run_The_App
 
-### Advanced Configuration
+To install all **dependencies** use your **Command Line** to browse to the project folder and hit:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+``` bash
+    npm install
+```
+    
+then hit the next command to run the app:
+``` bash
+    npm start 
+```
 
-### Deployment
+## Challenges
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+There were some challenges but most of them was not that difficult. There were two big challenges:
+1. to add the name of movies to the URL as: *https://animove.netlify.com/?#/reign-of-the-supermen* so used an advanced topic in React Routing that is to pass the **path** as a parameter, 
+```r
+<NavLink to={pathTO} > </ NavLLink>
+<Route path='/:movieName' exact component={ViewDetails} />
+```
 
-### `npm run build` fails to minify
+2. to reuse some components that would have different styling when used in different places. so passed parameters to this reusable components and according to this parameters these components will have different CSS classes and styling: 
+``` js
+<div className={props.review ? classes.CardAsRewiew : null + ' col-10 mx-auto col-md-4 col-lg-3 pb-5 item-align-center'} >
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Release 
+
+The application has been deployed to Github and can be found [here](https://animove.netlify.com/?#/).
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Please make sure to update tests as appropriate.
+
