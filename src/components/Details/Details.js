@@ -15,7 +15,7 @@ const Details = (props) => {
                     <h4>{props.clickedMovie.name}</h4>
                     <h6>{props.clickedMovie.year}</h6>
                     <h6>{props.clickedMovie.genre}i</h6>
-                    <h6>IDMB {props.clickedMovie.idmb}</h6>
+                    <h6>IMDB {props.clickedMovie.idmb}</h6>
                     <AvailableIn
                         link_720={props.clickedMovie.torrentLink_720}
                         link_1080={props.clickedMovie.torrentLink_1080} />
@@ -34,7 +34,7 @@ const Details = (props) => {
                     <h3>{props.clickedMovie.name}</h3>
                     <h5>{props.clickedMovie.year}</h5>
                     <h5>{props.clickedMovie.genre}</h5>
-                    <h5>IDMB {props.clickedMovie.idmb}</h5>
+                    <h5>IMDB {props.clickedMovie.idmb}</h5>
                     <AvailableIn
                         link_720={props.clickedMovie.torrentLink_720}
                         link_1080={props.clickedMovie.torrentLink_1080} />

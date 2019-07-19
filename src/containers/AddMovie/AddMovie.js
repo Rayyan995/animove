@@ -119,7 +119,7 @@ export default class AddMovie extends Component {
                                     <input
                                         onChange={(e) => this.inputChangedHandler(e, elem.id)}
                                         type="text"
-                                        className="form-control"
+                                        className={"form-control"}
                                         placeholder={elem.fieldsElements.placeholder} />
                                 </div>
                             )

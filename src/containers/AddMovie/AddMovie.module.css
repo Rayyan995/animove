@@ -13,6 +13,9 @@
 .Form input {
     color: var(--mainDark) !important;
 }
+.Form .EmptyInput {
+    border: 1px solid red;
+}
 .Form button, input, p {
     font-size: 18px;
 }
